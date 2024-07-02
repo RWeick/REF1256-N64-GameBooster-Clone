@@ -1,0 +1,635 @@
+Timing Analyzer report for GameBooster
+Sat Jun 29 20:14:47 2024
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; GameBooster                                         ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM570T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 71.92 MHz ; 71.92 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -12.905 ; -941.973      ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.387 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                  ;
++---------+------------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node        ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------------+------------+--------------+-------------+--------------+------------+------------+
+; -12.905 ; n64_ad_store[30] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.572     ;
+; -12.904 ; n64_ad_store[30] ; r_sst[11]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.571     ;
+; -12.743 ; n64_ad_store[29] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.410     ;
+; -12.742 ; n64_ad_store[29] ; r_sst[11]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.409     ;
+; -12.580 ; n64_ad_store[8]  ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 13.247     ;
+; -12.322 ; n64_ad_store[25] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.989     ;
+; -12.315 ; n64_ad_store[26] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.982     ;
+; -12.273 ; n64_ad_store[26] ; r_sst[11]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.940     ;
+; -12.268 ; n64_ad_store[27] ; r_sst[11]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.935     ;
+; -12.221 ; n64_ad_store[11] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.888     ;
+; -12.215 ; n64_ad_store[31] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.882     ;
+; -12.214 ; n64_ad_store[31] ; r_sst[11]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.881     ;
+; -12.195 ; n64_ad_store[30] ; r_sst[16]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.862     ;
+; -12.195 ; n64_ad_store[30] ; r_sst[8]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.862     ;
+; -12.192 ; n64_ad_store[25] ; r_read_top ; clk          ; clk         ; 1.000        ; 0.000      ; 12.859     ;
+; -12.185 ; n64_ad_store[25] ; r_sst[11]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.852     ;
+; -12.173 ; n64_ad_store[30] ; r_sst[15]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.840     ;
+; -12.173 ; n64_ad_store[30] ; r_sst[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.840     ;
+; -12.173 ; n64_ad_store[30] ; r_sst[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.840     ;
+; -12.173 ; n64_ad_store[30] ; r_sst[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.840     ;
+; -12.173 ; n64_ad_store[30] ; r_sst[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.840     ;
+; -12.173 ; n64_ad_store[30] ; r_sst[9]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.840     ;
+; -12.173 ; n64_ad_store[30] ; r_sst[14]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.840     ;
+; -12.142 ; n64_ad_store[27] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.809     ;
+; -12.092 ; n64_ad_store[30] ; r_ad[7]    ; clk          ; clk         ; 1.000        ; 0.000      ; 12.759     ;
+; -12.033 ; n64_ad_store[29] ; r_sst[16]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.700     ;
+; -12.033 ; n64_ad_store[29] ; r_sst[8]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.700     ;
+; -12.021 ; eleven_range_en  ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.688     ;
+; -12.021 ; n64_ad_store[15] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.688     ;
+; -12.012 ; n64_ad_store[8]  ; r_sst[17]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.679     ;
+; -12.011 ; n64_ad_store[29] ; r_sst[15]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.678     ;
+; -12.011 ; n64_ad_store[29] ; r_sst[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.678     ;
+; -12.011 ; n64_ad_store[29] ; r_sst[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.678     ;
+; -12.011 ; n64_ad_store[29] ; r_sst[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.678     ;
+; -12.011 ; n64_ad_store[29] ; r_sst[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.678     ;
+; -12.011 ; n64_ad_store[29] ; r_sst[9]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.678     ;
+; -12.011 ; n64_ad_store[29] ; r_sst[14]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.678     ;
+; -11.930 ; n64_ad_store[29] ; r_ad[7]    ; clk          ; clk         ; 1.000        ; 0.000      ; 12.597     ;
+; -11.919 ; n64_ad_store[19] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.586     ;
+; -11.905 ; n64_ad_store[26] ; r_read_top ; clk          ; clk         ; 1.000        ; 0.000      ; 12.572     ;
+; -11.878 ; n64_ad_store[8]  ; r_sst[16]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.545     ;
+; -11.870 ; n64_ad_store[8]  ; r_sst[8]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.537     ;
+; -11.870 ; n64_ad_store[7]  ; r_sst[17]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.537     ;
+; -11.848 ; n64_ad_store[8]  ; r_sst[15]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.515     ;
+; -11.848 ; n64_ad_store[8]  ; r_sst[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.515     ;
+; -11.848 ; n64_ad_store[8]  ; r_sst[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.515     ;
+; -11.848 ; n64_ad_store[8]  ; r_sst[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.515     ;
+; -11.848 ; n64_ad_store[8]  ; r_sst[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.515     ;
+; -11.848 ; n64_ad_store[8]  ; r_sst[9]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.515     ;
+; -11.848 ; n64_ad_store[8]  ; r_sst[14]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.515     ;
+; -11.825 ; n64_ad_store[8]  ; r_ad[7]    ; clk          ; clk         ; 1.000        ; 0.000      ; 12.492     ;
+; -11.788 ; n64_ad_store[14] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.455     ;
+; -11.747 ; n64_ad_store[30] ; r_sst[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.414     ;
+; -11.747 ; n64_ad_store[30] ; r_sst[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.414     ;
+; -11.747 ; n64_ad_store[30] ; r_sst[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.414     ;
+; -11.747 ; n64_ad_store[30] ; r_sst[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.414     ;
+; -11.747 ; n64_ad_store[30] ; r_sst[12]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.414     ;
+; -11.747 ; n64_ad_store[30] ; r_sst[13]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.414     ;
+; -11.747 ; n64_ad_store[30] ; r_sst[17]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.414     ;
+; -11.747 ; n64_ad_store[30] ; r_sst[18]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.414     ;
+; -11.739 ; n64_ad_store[30] ; r_cp       ; clk          ; clk         ; 1.000        ; 0.000      ; 12.406     ;
+; -11.739 ; n64_ad_store[30] ; r_dsab     ; clk          ; clk         ; 1.000        ; 0.000      ; 12.406     ;
+; -11.736 ; n64_ad_store[7]  ; r_sst[16]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.403     ;
+; -11.702 ; n64_ad_store[28] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.369     ;
+; -11.701 ; n64_ad_store[28] ; r_sst[11]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.368     ;
+; -11.674 ; n64_ad_store[24] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.341     ;
+; -11.662 ; n64_ad_store[21] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.329     ;
+; -11.657 ; n64_ad_store[30] ; r_read_top ; clk          ; clk         ; 1.000        ; 0.000      ; 12.324     ;
+; -11.617 ; n64_ad_store[10] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.284     ;
+; -11.612 ; n64_ad_store[25] ; r_sst[16]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.279     ;
+; -11.612 ; n64_ad_store[25] ; r_sst[8]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.279     ;
+; -11.605 ; n64_ad_store[26] ; r_sst[16]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.272     ;
+; -11.605 ; n64_ad_store[26] ; r_sst[8]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.272     ;
+; -11.600 ; one_e_range_en   ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.267     ;
+; -11.593 ; n64_ad_store[13] ; r_sst[10]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.260     ;
+; -11.590 ; n64_ad_store[25] ; r_sst[15]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.257     ;
+; -11.590 ; n64_ad_store[25] ; r_sst[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.257     ;
+; -11.590 ; n64_ad_store[25] ; r_sst[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.257     ;
+; -11.590 ; n64_ad_store[25] ; r_sst[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.257     ;
+; -11.590 ; n64_ad_store[25] ; r_sst[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.257     ;
+; -11.590 ; n64_ad_store[25] ; r_sst[9]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.257     ;
+; -11.590 ; n64_ad_store[25] ; r_sst[14]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.257     ;
+; -11.589 ; n64_ad_store[6]  ; r_ad[7]    ; clk          ; clk         ; 1.000        ; 0.000      ; 12.256     ;
+; -11.585 ; n64_ad_store[29] ; r_sst[0]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.252     ;
+; -11.585 ; n64_ad_store[29] ; r_sst[1]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.252     ;
+; -11.585 ; n64_ad_store[29] ; r_sst[2]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.252     ;
+; -11.585 ; n64_ad_store[29] ; r_sst[6]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.252     ;
+; -11.585 ; n64_ad_store[29] ; r_sst[12]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.252     ;
+; -11.585 ; n64_ad_store[29] ; r_sst[13]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.252     ;
+; -11.585 ; n64_ad_store[29] ; r_sst[17]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.252     ;
+; -11.585 ; n64_ad_store[29] ; r_sst[18]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.252     ;
+; -11.583 ; n64_ad_store[26] ; r_sst[15]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.250     ;
+; -11.583 ; n64_ad_store[26] ; r_sst[3]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.250     ;
+; -11.583 ; n64_ad_store[26] ; r_sst[4]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.250     ;
+; -11.583 ; n64_ad_store[26] ; r_sst[5]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.250     ;
+; -11.583 ; n64_ad_store[26] ; r_sst[7]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.250     ;
+; -11.583 ; n64_ad_store[26] ; r_sst[9]   ; clk          ; clk         ; 1.000        ; 0.000      ; 12.250     ;
+; -11.583 ; n64_ad_store[26] ; r_sst[14]  ; clk          ; clk         ; 1.000        ; 0.000      ; 12.250     ;
+; -11.577 ; n64_ad_store[29] ; r_cp       ; clk          ; clk         ; 1.000        ; 0.000      ; 12.244     ;
+; -11.577 ; n64_ad_store[29] ; r_dsab     ; clk          ; clk         ; 1.000        ; 0.000      ; 12.244     ;
++---------+------------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                             ;
++-------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                   ; To Node                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; 1.387 ; r_button[2]                 ; r_button[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.608      ;
+; 1.395 ; r_button[8]                 ; r_button[9]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.616      ;
+; 1.396 ; r_button[9]                 ; r_button[10]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.617      ;
+; 1.397 ; r_button[5]                 ; r_button[6]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.618      ;
+; 1.404 ; write_stat[1]               ; write_stat[2]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.408 ; r_button[13]                ; r_button[14]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.629      ;
+; 1.409 ; r_button[10]                ; r_button[11]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.630      ;
+; 1.418 ; r_button[14]                ; r_button[15]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.639      ;
+; 1.422 ; r_button[18]                ; r_button[19]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.643      ;
+; 1.663 ; r_read                      ; read_low                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.884      ;
+; 1.666 ; r_read                      ; read_high                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.887      ;
+; 1.667 ; data_out_state.DATA_OUT_END ; data_out_state.DATA_OUT_END ; clk          ; clk         ; 0.000        ; 0.000      ; 1.888      ;
+; 1.670 ; r_button[16]                ; r_button[17]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.891      ;
+; 1.679 ; n64_data_store[9]           ; r_cp                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.900      ;
+; 1.682 ; r_button[6]                 ; r_button[7]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.903      ;
+; 1.683 ; n64_data_store[9]           ; r_dsab                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.904      ;
+; 1.687 ; r_button[17]                ; r_button[18]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.908      ;
+; 1.691 ; r_pport_cp                  ; r_gb_a15                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.912      ;
+; 1.692 ; r_pport_cp                  ; r_gb_cs                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.913      ;
+; 1.694 ; r_button[15]                ; r_button[16]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.700 ; write_stat[0]               ; write_stat[1]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.921      ;
+; 1.757 ; r_button[11]                ; r_button[12]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.978      ;
+; 1.772 ; r_button[3]                 ; r_button[4]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.993      ;
+; 1.772 ; r_button[12]                ; r_button[13]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.993      ;
+; 1.774 ; r_button[0]                 ; r_button[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.995      ;
+; 1.783 ; r_button[1]                 ; r_button[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.004      ;
+; 1.899 ; seven_seg_enable            ; seven_seg_enable            ; clk          ; clk         ; 0.000        ; 0.000      ; 2.120      ;
+; 1.922 ; one_op_complete             ; one_low_state.ONE_LOW_RESET ; clk          ; clk         ; 0.000        ; 0.000      ; 2.143      ;
+; 1.936 ; eleven_range_en             ; eleven_range_en             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.157      ;
+; 2.034 ; r_button[4]                 ; r_button[5]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.255      ;
+; 2.095 ; r_button[12]                ; press                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.316      ;
+; 2.107 ; addr_increment[5]           ; addr_increment[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.107 ; addr_increment[6]           ; addr_increment[6]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.328      ;
+; 2.108 ; addr_increment[3]           ; addr_increment[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.329      ;
+; 2.117 ; addr_increment[7]           ; addr_increment[7]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; addr_increment[8]           ; addr_increment[8]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.127 ; data_out_op                 ; data_out_op                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.348      ;
+; 2.129 ; data_out_op                 ; data_out_state.DATA_OUT_END ; clk          ; clk         ; 0.000        ; 0.000      ; 2.350      ;
+; 2.147 ; one_low_state.ONE_LOW_START ; one_low_state.ONE_LOW_START ; clk          ; clk         ; 0.000        ; 0.000      ; 2.368      ;
+; 2.166 ; n64_ad_store[10]            ; r_ad[7]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.387      ;
+; 2.184 ; data_state.DATA_END         ; data_state.DATA_END         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.405      ;
+; 2.191 ; data_state.DATA_END         ; ale_out_en                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.412      ;
+; 2.212 ; addr_increment[4]           ; addr_increment[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; addr_increment[9]           ; addr_increment[9]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.230 ; addr_increment[1]           ; addr_increment[1]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; addr_increment[11]          ; addr_increment[11]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; addr_increment[0]           ; addr_increment[0]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; addr_increment[2]           ; addr_increment[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; addr_increment[10]          ; addr_increment[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; addr_increment[12]          ; addr_increment[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.232 ; one_low_state.ONE_LOW_RESET ; one_low_state.ONE_LOW_RESET ; clk          ; clk         ; 0.000        ; 0.000      ; 2.453      ;
+; 2.241 ; one_low_state.ONE_LOW_END   ; one_low_state.ONE_LOW_END   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.462      ;
+; 2.246 ; n64_data_store[10]          ; r_cp                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.467      ;
+; 2.249 ; ale_out_en                  ; ale_out_en                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.470      ;
+; 2.252 ; n64_data_store[8]           ; r_dsab                      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.473      ;
+; 2.262 ; r_pport_cp                  ; r_shift_dir                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.483      ;
+; 2.277 ; write_stat[0]               ; write_high                  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.498      ;
+; 2.279 ; write_stat[0]               ; write_low                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.500      ;
+; 2.359 ; r_button[7]                 ; r_button[8]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.580      ;
+; 2.507 ; one_op_complete             ; one_low_state.ONE_LOW_START ; clk          ; clk         ; 0.000        ; 0.000      ; 2.728      ;
+; 2.605 ; n64_ad_store[5]             ; r_ad[7]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.826      ;
+; 2.639 ; r_button[15]                ; press                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.860      ;
+; 2.647 ; r_button[19]                ; press                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.868      ;
+; 2.747 ; r_button[8]                 ; press                       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.968      ;
+; 2.844 ; write_high                  ; data_state.DATA_END         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.065      ;
+; 2.911 ; read_low                    ; ad_out_en                   ; clk          ; clk         ; 0.000        ; 0.000      ; 3.132      ;
+; 2.926 ; r_button[2]                 ; press                       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.147      ;
+; 2.939 ; addr_increment[6]           ; addr_increment[7]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.160      ;
+; 2.940 ; addr_increment[3]           ; addr_increment[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.161      ;
+; 2.949 ; addr_increment[7]           ; addr_increment[8]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; addr_increment[8]           ; addr_increment[9]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.170      ;
+; 2.977 ; one_op_complete             ; one_low_state.ONE_LOW_END   ; clk          ; clk         ; 0.000        ; 0.000      ; 3.198      ;
+; 3.030 ; one_low_state.ONE_LOW_RESET ; one_low_state.ONE_LOW_START ; clk          ; clk         ; 0.000        ; 0.000      ; 3.251      ;
+; 3.050 ; addr_increment[6]           ; addr_increment[8]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.271      ;
+; 3.051 ; addr_increment[3]           ; addr_increment[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.272      ;
+; 3.060 ; addr_increment[8]           ; addr_increment[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; addr_increment[7]           ; addr_increment[9]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.069 ; n64_ad_store[6]             ; r_sst_oe                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.290      ;
+; 3.150 ; one_low_state.ONE_LOW_START ; one_low_state.ONE_LOW_RESET ; clk          ; clk         ; 0.000        ; 0.000      ; 3.371      ;
+; 3.152 ; one_low_state.ONE_LOW_START ; one_low_state.ONE_LOW_END   ; clk          ; clk         ; 0.000        ; 0.000      ; 3.373      ;
+; 3.152 ; addr_increment[4]           ; addr_increment[5]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.373      ;
+; 3.152 ; addr_increment[9]           ; addr_increment[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.373      ;
+; 3.161 ; addr_increment[6]           ; addr_increment[9]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.382      ;
+; 3.168 ; r_button[13]                ; press                       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.389      ;
+; 3.170 ; addr_increment[1]           ; addr_increment[2]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; addr_increment[11]          ; addr_increment[12]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171 ; addr_increment[2]           ; addr_increment[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; addr_increment[7]           ; addr_increment[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.175 ; n64_ad_store[7]             ; r_sst[6]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 3.396      ;
+; 3.180 ; r_button[16]                ; press                       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.401      ;
+; 3.199 ; n64_ad_store[11]            ; sst_address[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.420      ;
+; 3.215 ; n64_ad_store[19]            ; r_sst[18]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 3.436      ;
+; 3.228 ; one_e_range_en              ; one_e_range_en              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.449      ;
+; 3.247 ; r_button[11]                ; press                       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.468      ;
+; 3.272 ; addr_increment[6]           ; addr_increment[10]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.493      ;
+; 3.281 ; addr_increment[1]           ; addr_increment[3]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.282 ; addr_increment[2]           ; addr_increment[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 3.503      ;
+; 3.315 ; data_out_en                 ; ad_out_en                   ; clk          ; clk         ; 0.000        ; 0.000      ; 3.536      ;
+; 3.323 ; addr_increment[1]           ; sst_address[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 3.544      ;
+; 3.329 ; r_button[14]                ; press                       ; clk          ; clk         ; 0.000        ; 0.000      ; 3.550      ;
++-------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 8832     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 8832     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 28    ; 28   ;
+; Unconstrained Input Port Paths  ; 156   ; 156  ;
+; Unconstrained Output Ports      ; 44    ; 44   ;
+; Unconstrained Output Port Paths ; 76    ; 76   ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                ;
++-------------------+--------------------------------------------------------------------------------------+
+; Input Port        ; Comment                                                                              ;
++-------------------+--------------------------------------------------------------------------------------+
+; ad[0]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[1]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[2]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[3]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[4]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[5]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[6]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[7]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[8]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[9]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[10]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[11]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[12]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[13]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[14]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[15]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; aleh              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; alel              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; button            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pic_gp4           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pic_gp5           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_d0         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_d1         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_d2         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_d3         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_data_ready ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; write             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; ad[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[7]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[8]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[9]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[10]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[11]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[12]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[13]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[14]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[15]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cp          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dsab        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; gameboy_a15 ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; gameboy_cs  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pport_cp    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_top    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; shift_dir   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[8]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[9]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[10]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[11]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[12]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[13]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[14]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[15]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[16]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[17]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[18]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst_ce      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst_oe      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                ;
++-------------------+--------------------------------------------------------------------------------------+
+; Input Port        ; Comment                                                                              ;
++-------------------+--------------------------------------------------------------------------------------+
+; ad[0]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[1]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[2]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[3]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[4]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[5]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[6]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[7]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[8]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[9]             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[10]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[11]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[12]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[13]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[14]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[15]            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; aleh              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; alel              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; button            ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pic_gp4           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pic_gp5           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_d0         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_d1         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_d2         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_d3         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; remote_data_ready ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; write             ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; ad[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[7]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[8]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[9]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[10]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[11]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[12]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[13]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[14]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ad[15]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; cp          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dsab        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; gameboy_a15 ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; gameboy_cs  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; pport_cp    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; read_top    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; shift_dir   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[8]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[9]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[10]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[11]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[12]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[13]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[14]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[15]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[16]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[17]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst[18]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst_ce      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sst_oe      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Processing started: Sat Jun 29 20:14:45 2024
+Info: Command: quartus_sta GameBooster -c GameBooster
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'GameBooster.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -12.905
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -12.905            -941.973 clk 
+Info (332146): Worst-case hold slack is 1.387
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.387               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4683 megabytes
+    Info: Processing ended: Sat Jun 29 20:14:47 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

@@ -1,0 +1,16 @@
+
+State Machine - |GameBooster|data_out_state
+Name data_out_state.DATA_OUT_END 
+data_out_state.DATA_OUT_START 0 
+data_out_state.DATA_OUT_END 1 
+
+State Machine - |GameBooster|one_low_state
+Name one_low_state.ONE_LOW_START one_low_state.ONE_LOW_RESET one_low_state.ONE_LOW_END 
+one_low_state.ONE_LOW_START 0 0 0 
+one_low_state.ONE_LOW_END 1 0 1 
+one_low_state.ONE_LOW_RESET 1 1 0 
+
+State Machine - |GameBooster|data_state
+Name data_state.DATA_END 
+data_state.DATA_START 0 
+data_state.DATA_END 1 
