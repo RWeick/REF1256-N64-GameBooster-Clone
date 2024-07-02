@@ -1,3 +1,4 @@
+# REF1256-N64-GameBooster-Clone
 An open source clone of the Datel GameBooster for the Nintendo 64
 
 This is a fully functional Nintendo 64 GameBooster clone. It implements the original LZ9FC17 GAL on an Altera EPM570, and fully supports all functionality to include: loading Gameboy cartridges and the GS button.
